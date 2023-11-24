@@ -9,14 +9,17 @@ def iterativeSearch(array, num):
 def binarySearch(array, n):
     a = 0
     b = len(array)
-    counter = 0
+    counter = 1
     while a != b:
-        counter = counter + 1
-        m = int((a+b) / 2)
-        if n <= array[m]:
-            b = m
+        m = (a+b)//2
+        if array[m] == n:
+            return counter
         else:
-            a = m + 1
-    if n == array[a]:
-        return counter
+            if n < array[m]:
+                b=m
+            elif n > array[m]:
+                a = m+1
+            else:
+                pass
+        counter += 1
     return -1
