@@ -20,4 +20,20 @@ public abstract class Account {
 			this.balance -= amount;
 		}
 	}
+
+	public int getAccnum() {
+		return accnum;
+	}
+
+	public void setAccnum( int accnum ) {
+		this.accnum = accnum;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance( double balance ) {
+		this.balance = balance
+	}
 }
