@@ -1,17 +1,23 @@
 def main():
-	myArray = ( 2 , 3 , 1213 , 2134 , 334134 , 123 , 12312 , 3123 )
+	myArray = [ 123,123,435,667,788,7883,242,3 ]
 	MergeSort(myArray)
 	printArray(myArray)
 
 def MergeSort(inputArray):
 	inputLength = len(inputArray)
+
+	if inputLength < 2:
+		return
+
 	midIndex = inputLength // 2
+	leftHalf = [0] * midIndex
+	rightHalf = [0] * ( inputLength - midIndex )
 
 	for i in range(0, midIndex):
 		leftHalf[i] = inputArray[i]
 
 	for i in range(midIndex, inputLength):
-		rightHalf[midIndex - i] = inputLength[i]
+		rightHalf[midIndex - i] = inputArray[i]
 
 	MergeSort(leftHalf)
 	MergeSort(rightHalf)
@@ -27,7 +33,7 @@ def Merge(inputArray , leftHalf , rightHalf):
 	k = 0
 
 	while i < leftSize and j < rightSize:
-		if leftSize[i] < rightSize[j]:
+		if leftHalf[i] <= rightHalf[j]:
 			inputArray[k] = leftHalf[i]
 			i += 1
 		else:
@@ -41,7 +47,7 @@ def Merge(inputArray , leftHalf , rightHalf):
 		k += 1
 
 	while j < rightSize:
-		inputArray[k] = leftHalf[j]
+		inputArray[k] = rightHalf[j]
 		j += 1
 		k += 1
 
