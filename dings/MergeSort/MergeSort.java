@@ -68,12 +68,12 @@ public class MergeSort {
         }
 
         // if there is an left out element from any array, it gets added
-        while (i < leftHalf.length) {
+        while (i < leftSize) {
             inputArray[k] = leftHalf[i];
             i++;
             k++;
         }
-        while (j < rightHalf.length) {
+        while (j < rightSize) {
             inputArray[k] = rightHalf[j];
             j++;
             k++;
