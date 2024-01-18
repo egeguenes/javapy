@@ -13,7 +13,3 @@ def solution( arr , n ): # n = len(arr)
 		sum_of_nums += arr[i]
 	nums.reverse()
 	return nums
-
-arr = [2 , 3 ,4 , 5 , 17 , 19]
-result = solution(arr , len(arr))
-print(result)
